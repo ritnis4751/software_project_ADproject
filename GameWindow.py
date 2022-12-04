@@ -14,7 +14,9 @@ class GameWindow(QWidget):
         
         # window 크기 조정
         self.setGeometry(0, 0, 1000, 700)
-        self.center()
+        
+        # window 위치 조정
+        self.move(400, 200)
         
         # 메세지 박스 생성
         self.qMsgBox = QMessageBox()
@@ -95,22 +97,15 @@ class GameWindow(QWidget):
         # label.move(xPoint, 100)
     
     # 딜러의 카드 배치
-    def displayDealerCard(self, label, cardshape, xPoint):
-        # pixmap: 이미지 객체 생성 메서드
-        self.pixmap = QPixmap(f"./PNG-cards-1.3/{cardshape}").scaledToWidth(100)
+    def displayDealerCard(self, label, cardShape, xPoint):
+        # pixmap: 이미지를 저장할 객체
+        self.pixmap = QPixmap(f"./PNG-cards-1.3/{cardShape}").scaledToWidth(100)
         # setPixmap: label 이미지 객체 삽입 메서드
         label.setPixmap(self.pixmap)
         label.move(xPoint, 0)
         label.resize(self.pixmap.width(), self.pixmap.height())
         # label.setText(cardshape)
         # label.move(xPoint, 0)
-
-    # 프로그램 센터에 배치
-    def center(self):
-        qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
 
     # 게임 보드를 초기화
     def clear(self):
