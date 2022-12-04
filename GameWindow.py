@@ -86,14 +86,14 @@ class GameWindow(QWidget):
         self.show()
 
     # 플레이어의 카드 배치
-    def displayPlayerCard(self, label, cardshape, xPoint):
+    def displayPlayerCard(self, label, cardShape, xPoint):
         # pixmap: 이미지 삽입 메서드
-        self.pixmap = QPixmap(f"./PNG-cards-1.3/{cardshape}").scaledToWidth(100)
+        self.pixmap = QPixmap(f"./PNG-cards-1.3/{cardShape}").scaledToWidth(100)
         # setPixmap: label 이미지 객체 삽입 메서드
         label.setPixmap(self.pixmap)
         label.move(xPoint, 200)
         label.resize(self.pixmap.width(), self.pixmap.height())
-        # label.setText(cardshape)
+        # label.setText(cardShape)
         # label.move(xPoint, 100)
     
     # 딜러의 카드 배치
