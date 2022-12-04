@@ -3,10 +3,10 @@ from ButtonFunction import *
 
 
 class Button(QPushButton):
-    def __init__(self, text, callback):
+    def __init__(self, name, callback):
         super().__init__()
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        self.setText(text)
+        self.setText(name)
         self.clicked.connect(callback)
 
     def sizeHint(self):
