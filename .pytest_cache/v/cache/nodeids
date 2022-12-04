@@ -1,0 +1,5 @@
+[
+  "unitTest.py::TestInner::testBlackJack",
+  "unitTest.py::TestInner::testCount",
+  "unitTest.py::TestInner::testShowCard"
+]
