@@ -69,7 +69,7 @@ def deal(gameWindow):# 베팅 값이 음수일 때 (비정상)
             # 플레이어의 카드의 총합이 21일 때 (블랙잭)
             if IF.count(gameWindow.intPlayercards) == 21:
                 # 메세지 출력
-                gameWindow.QMessageBoxExec("Congratulations! \nBlack Jack!")
+                gameWindow.QMessageBoxExec("Black Jack!")
                 # money Update
                 gameWindow.money = IF.setMoney(gameWindow.money, gameWindow.bettingCost, 3)
                 gameWindow.mDisplay.setText('money: ' + str(gameWindow.money))
@@ -80,7 +80,8 @@ def deal(gameWindow):# 베팅 값이 음수일 때 (비정상)
         gameWindow.display.setText("Please click betting number")
         return
 
-def newCard(gameWindow):# 플레이어의 카드 더미에 카드 추가하기
+def newCard(gameWindow):
+    # 플레이어의 카드 더미에 카드 추가하기
     IF.cardAppend(gameWindow.intPlayercards, gameWindow.card)
     # print(gameWindow.intPlayercards)
     # [34, 5, 7]
@@ -113,7 +114,8 @@ def newCard(gameWindow):# 플레이어의 카드 더미에 카드 추가하기
     else:
         return
 
-def stay(gameWindow):# Dealer 카드
+def stay(gameWindow):
+    # Dealer 카드 표시
     gameWindow.displayDealerCard(gameWindow.dCardList[1], gameWindow.dealerCards[1], gameWindow.xPoint[1])
     # Dealer Burst
     if IF.count(gameWindow.intDealercards) > 21:

@@ -53,7 +53,6 @@ def cardAppend(cardList, card):
     # cardlist에 카드 뭉치의 카드 추가
     cardList.append(card.pop(0))
 
-
 # end 버튼 클릭 이벤트, Lose: 0 Win: 1 Draw 2
 def fight(playerResult, dealerResult):
     if playerResult == dealerResult:
@@ -62,6 +61,7 @@ def fight(playerResult, dealerResult):
         return 0
     elif playerResult > dealerResult:
         return 1
+
 # burst인지 확인
 def burst(cards):
     result = count(cards)
@@ -77,25 +77,25 @@ def setCard():
 
 # 카드패의 합 계산
 def count(cardsList):
-        result = 0
+        sum = 0
         cnt = 0
         for card in cardsList:
             if card % 13 >= 10:
-                result += 10
+                sum += 10
             else:
-                result += card % 13 + 1
+                sum += card % 13 + 1
                 # 만약 카드가 A라면
                 if card % 13 == 0:
                     cnt += 1
 
         for i in range(cnt):
             # A를 1로 사용할지 11로 사용할지 결정
-            if result + 10 <= 21:
-                result += 10
+            if sum + 10 <= 21:
+                sum += 10
             else:
                 break
 
-        return result
+        return sum
 
 # 카드패를 문자열로 변환
 def intToStringCard(card):
@@ -103,6 +103,7 @@ def intToStringCard(card):
     for data in card:
         cardSuit = marks[data//13]
         cardNumber = CARDNUMBER[data % 13]
-        card = str(cardSuit) + str(cardNumber) # 여기다 " " 이걸 추가하면 사진이 안나온다..~
+        card = str(cardSuit) + str(cardNumber)
         cardList.append(card)
+
     return cardList
