@@ -26,7 +26,6 @@ class GameWindow(QWidget):
         self.money = load()
         # bettingCost 생성
         self.bettingCost = 1000
-        # self.dealCount = 0
 
         self.display = QLabel()
         self.bDisplay = QLabel('bet: ' + str(self.bettingCost))
