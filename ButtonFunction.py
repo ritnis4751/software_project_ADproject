@@ -51,8 +51,6 @@ def deal(gameWindow):# 베팅 값이 음수일 때 (비정상)
             gameWindow.card = IF.setCard()
             # Player에게 카드 두 장 주기 (int 형 list)
             gameWindow.intPlayercards = IF.twoCard(gameWindow.card)
-            # print(gameWindow.intPlayercards)
-            # [34, 5]F
             # Dealer에게 카드 두 장 주기 (int 형 list)
             gameWindow.intDealercards = IF.twoCard(gameWindow.card)
             # Player와 Dealer의 카드들을 int에서 string으로 변환
