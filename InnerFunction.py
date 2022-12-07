@@ -70,6 +70,14 @@ def burst(cards):
     else:
         return False
 
+# blackjack인지 확인
+def blackjack(cards):
+    result = count(cards)
+    if result == 21:
+        return True
+    else:
+        return False
+
 # 카드 뭉치 생성
 def setCard():
     # 카드를 아무리 많이 뽑아도 17장 이상은 뽑을 수 없음

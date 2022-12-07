@@ -103,7 +103,7 @@ def newCard(gameWindow):
         # money 반영
         gameWindow.mDisplay.setText('money: ' + str(gameWindow.money))
     # Black Jack 완성
-    elif IF.count(gameWindow.intPlayercards) == 21:
+    elif IF.blackjack(gameWindow.intPlayercards) == 21:
         # Black Jack 메세지 출력
         gameWindow.QMessageBoxExec("Congratulations! \nBlack Jack!")
         # money 증가

@@ -1,5 +1,7 @@
 [
   "unitTest.py::TestInner::testBlackJack",
+  "unitTest.py::TestInner::testBurst",
   "unitTest.py::TestInner::testCount",
-  "unitTest.py::TestInner::testShowCard"
+  "unitTest.py::TestInner::testFight",
+  "unitTest.py::TestInner::testintToStringCard"
 ]
